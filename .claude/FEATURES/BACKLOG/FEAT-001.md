@@ -1,0 +1,169 @@
+# FEAT-001: Setup Projet Flutter
+
+| Attribut | Valeur |
+|----------|--------|
+| **ID** | FEAT-001 |
+| **Titre** | Setup projet Flutter |
+| **Priorite** | P0 - Critique |
+| **Statut** | A faire |
+| **Phase** | 1 - Setup & Core |
+| **Effort estime** | 1-2 heures |
+| **Dependances** | Aucune |
+| **Bloque** | FEAT-002, FEAT-003, FEAT-004 |
+
+---
+
+## Description
+
+Creer le projet Flutter de base avec la structure d'architecture Clean et les dependencies essentielles.
+
+### Objectif
+
+Avoir un projet Flutter fonctionnel avec:
+- Structure de dossiers Clean Architecture
+- Dependencies de base installees
+- Configuration initiale (analysis_options, pubspec)
+- Premier ecran placeholder
+
+---
+
+## Specifications
+
+### Structure a creer
+
+```
+lib/
+├── main.dart
+├── app.dart
+├── core/
+│   ├── theme/
+│   │   ├── app_colors.dart
+│   │   ├── app_typography.dart
+│   │   ├── app_spacing.dart
+│   │   └── app_theme.dart
+│   ├── constants/
+│   │   └── app_icons.dart
+│   ├── utils/
+│   └── animations/
+├── data/
+│   ├── models/
+│   ├── repositories/
+│   └── services/
+├── domain/
+│   └── entities/
+└── presentation/
+    ├── screens/
+    ├── widgets/
+    └── providers/
+```
+
+### Dependencies (pubspec.yaml)
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.4.0
+  riverpod_annotation: ^2.3.0
+
+  # Navigation
+  go_router: ^12.0.0
+
+  # UI
+  lucide_icons: ^0.260.0
+  flutter_animate: ^4.3.0
+
+  # Utils
+  equatable: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  riverpod_generator: ^2.3.0
+  build_runner: ^2.4.0
+  mocktail: ^1.0.0
+```
+
+---
+
+## Plan d'implementation
+
+### Etape 1: Creer le projet
+
+```bash
+flutter create ast_blitz --org com.astblitz --platforms=ios,android
+cd ast_blitz
+```
+
+### Etape 2: Nettoyer et structurer
+
+- [ ] Supprimer le code par defaut
+- [ ] Creer la structure de dossiers
+- [ ] Configurer analysis_options.yaml
+
+### Etape 3: Ajouter les dependencies
+
+- [ ] Modifier pubspec.yaml
+- [ ] `flutter pub get`
+
+### Etape 4: Creer les fichiers de base
+
+- [ ] `lib/main.dart` - Point d'entree
+- [ ] `lib/app.dart` - MaterialApp avec theme
+- [ ] Placeholder screen
+
+### Etape 5: Verification
+
+```bash
+flutter analyze  # 0 erreur
+flutter run      # App demarre
+```
+
+---
+
+## Criteres de completion
+
+- [ ] `flutter analyze` = 0 erreur
+- [ ] `flutter run` = app demarre sans crash
+- [ ] Structure de dossiers creee
+- [ ] Dependencies installees
+- [ ] Commit valide
+
+---
+
+## Tests a effectuer
+
+### Tests manuels
+
+1. [ ] `flutter run` sur simulateur iOS
+2. [ ] `flutter run` sur emulateur Android
+3. [ ] App affiche ecran placeholder
+
+### Tests automatiques
+
+- Aucun pour cette tache (setup initial)
+
+---
+
+## Notes
+
+### Decisions techniques
+
+- Riverpod pour le state management (scalable, testable)
+- go_router pour la navigation (declaratif, type-safe)
+- lucide_icons pour coherence avec le design React
+
+### References
+
+- [FLUTTER_SPECS.md](../../FLUTTER_SPECS.md) - Section 8 (Packages) et 9 (Structure)
+
+---
+
+## Historique
+
+| Date | Action | Auteur |
+|------|--------|--------|
+| 2025-01-02 | Creation fiche | Claude Code |
