@@ -16,9 +16,9 @@ Implementer l'application AST Blitz Flutter basee sur les specs de `FLUTTER_SPEC
 | Metrique | Valeur |
 |----------|--------|
 | Features totales | 26 |
-| Terminees | 7 |
+| Terminees | 10 |
 | En cours | 0 |
-| Backlog | 19 |
+| Backlog | 16 |
 
 ---
 
@@ -86,9 +86,9 @@ FEATURES/
 |----|-------|----------|--------|--------|---------|
 | P2-001 | Ecran Home | P1 | Termine | f440273 | [Fiche](./COMPLETED/P2-001.md) |
 | P2-002 | Bottom Navigation | P1 | Termine | f440273 | [Fiche](./COMPLETED/P2-002.md) |
-| P2-003 | Ecran Exercises | P1 | A faire | - | [Fiche](./BACKLOG/P2-003.md) |
-| P2-004 | Ecran Learn | P1 | A faire | - | [Fiche](./BACKLOG/P2-004.md) |
-| P2-005 | Ecran Profile | P1 | A faire | - | [Fiche](./BACKLOG/P2-005.md) |
+| P2-003 | Ecran Exercises | P1 | Termine | - | [Fiche](./BACKLOG/P2-003.md) |
+| P2-004 | Ecran Learn | P1 | Termine | - | [Fiche](./BACKLOG/P2-004.md) |
+| P2-005 | Ecran Profile | P1 | Termine | - | [Fiche](./BACKLOG/P2-005.md) |
 
 ### Phase 3: Quiz & Exercices
 
@@ -132,25 +132,25 @@ FEATURES/
 | Phase | Total | Termine | En cours | A faire |
 |-------|-------|---------|----------|---------|
 | Phase 1: Setup | 6 | 5 | 0 | 1 |
-| Phase 2: Ecrans | 5 | 2 | 0 | 3 |
+| Phase 2: Ecrans | 5 | 5 | 0 | 0 |
 | Phase 3: Quiz | 5 | 0 | 0 | 5 |
 | Phase 4: Learn | 3 | 0 | 0 | 3 |
 | Phase 5: Social | 4 | 0 | 0 | 4 |
 | Phase 6: Misc | 3 | 0 | 0 | 3 |
-| **TOTAL** | **26** | **7** | **0** | **19** |
+| **TOTAL** | **26** | **10** | **0** | **16** |
 
 ---
 
 ## Progression
 
 ```
-Phase 1: [########################################] 100%
-Phase 2: [################                        ] 40%
+Phase 1: [#######################################-] 83%
+Phase 2: [########################################] 100%
 Phase 3: [                                        ] 0%
 Phase 4: [                                        ] 0%
 Phase 5: [                                        ] 0%
 Phase 6: [                                        ] 0%
-Global:  [###########                             ] 28%
+Global:  [################                        ] 38%
 ```
 
 ---

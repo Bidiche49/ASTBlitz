@@ -6,6 +6,9 @@ import '../../data/repositories/auth_repository.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/register_screen.dart';
 import '../screens/home/home_screen.dart';
+import '../screens/exercises/exercises_screen.dart';
+import '../screens/learn/learn_screen.dart';
+import '../screens/profile/profile_screen.dart';
 
 // Routes constants
 class AppRoutes {
@@ -126,14 +129,14 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
           GoRoute(
             path: AppRoutes.learn,
-            pageBuilder: (context, state) => NoTransitionPage(
-              child: _PlaceholderScreen(title: 'Apprendre'),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: LearnScreen(),
             ),
           ),
           GoRoute(
             path: AppRoutes.exercises,
-            pageBuilder: (context, state) => NoTransitionPage(
-              child: _PlaceholderScreen(title: 'Exercices'),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: ExercisesScreen(),
             ),
           ),
           GoRoute(
@@ -144,8 +147,8 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
           GoRoute(
             path: AppRoutes.profile,
-            pageBuilder: (context, state) => NoTransitionPage(
-              child: _PlaceholderScreen(title: 'Profil'),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: ProfileScreen(),
             ),
           ),
         ],

@@ -96,6 +96,7 @@ class AppIcons {
   static const creditCard = LucideIcons.creditCard;
   static const mail = LucideIcons.mail;
   static const scale = LucideIcons.scale;
+  static const gift = LucideIcons.gift;
 
   // Misc
   static const footprints = LucideIcons.footprints;
