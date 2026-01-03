@@ -5,6 +5,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_typography.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/constants/app_icons.dart';
+import '../../providers/auth_provider.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -19,7 +20,7 @@ class HomeScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Header
-              _buildHeader(context),
+              _buildHeader(context, ref),
               const SizedBox(height: AppSpacing.xxl),
 
               // Score Predictor placeholder
@@ -39,7 +40,7 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildHeader(BuildContext context) {
+  Widget _buildHeader(BuildContext context, WidgetRef ref) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -50,12 +51,14 @@ class HomeScreen extends ConsumerWidget {
             letterSpacing: 1,
           ),
         ),
+        // TODO: Bouton logout temporaire - a remplacer par menu
         IconButton(
           onPressed: () {
-            // TODO: Open menu
+            ref.read(authProvider.notifier).signOut();
           },
-          icon: const Icon(AppIcons.menu),
+          icon: const Icon(AppIcons.logOut),
           color: AppColors.foreground,
+          tooltip: 'Déconnexion (temp)',
         ),
       ],
     );

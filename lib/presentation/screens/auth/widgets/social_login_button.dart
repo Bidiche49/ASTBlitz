@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
@@ -63,11 +64,10 @@ class SocialLoginButton extends StatelessWidget {
 
   Widget _buildIcon() {
     return switch (type) {
-      SocialLoginType.google => Image.network(
-          'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg',
+      SocialLoginType.google => SvgPicture.asset(
+          'assets/images/google/google_g_logo.svg',
           width: 24,
           height: 24,
-          errorBuilder: (context, error, stackTrace) => const Icon(Icons.g_mobiledata, size: 24),
         ),
       SocialLoginType.apple => const Icon(Icons.apple, size: 24),
     };

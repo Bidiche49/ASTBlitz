@@ -15,10 +15,10 @@ Implementer l'application AST Blitz Flutter basee sur les specs de `FLUTTER_SPEC
 
 | Metrique | Valeur |
 |----------|--------|
-| Features totales | 25 |
+| Features totales | 26 |
 | Terminees | 7 |
 | En cours | 0 |
-| Backlog | 18 |
+| Backlog | 19 |
 
 ---
 
@@ -78,6 +78,7 @@ FEATURES/
 | P1-003 | Navigation (go_router) | P0 | Termine | f440273 | [Fiche](./COMPLETED/P1-003.md) |
 | P1-004 | Composants UI de base | P1 | Termine | 7e2ad30 | [Fiche](./COMPLETED/P1-004.md) |
 | P1-005 | Authentification | P0 | Termine | 419854a | [Fiche](./COMPLETED/P1-005.md) |
+| P1-006 | Configuration Apple Sign-In | P2 | A faire | - | [Fiche](./BACKLOG/P1-006.md) |
 
 ### Phase 2: Ecrans principaux
 
@@ -130,13 +131,13 @@ FEATURES/
 
 | Phase | Total | Termine | En cours | A faire |
 |-------|-------|---------|----------|---------|
-| Phase 1: Setup | 5 | 5 | 0 | 0 |
+| Phase 1: Setup | 6 | 5 | 0 | 1 |
 | Phase 2: Ecrans | 5 | 2 | 0 | 3 |
 | Phase 3: Quiz | 5 | 0 | 0 | 5 |
 | Phase 4: Learn | 3 | 0 | 0 | 3 |
 | Phase 5: Social | 4 | 0 | 0 | 4 |
 | Phase 6: Misc | 3 | 0 | 0 | 3 |
-| **TOTAL** | **25** | **7** | **0** | **18** |
+| **TOTAL** | **26** | **7** | **0** | **19** |
 
 ---
 

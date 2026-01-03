@@ -1,4 +1,5 @@
-import 'dart:io';
+// TODO: P1-006 - Reimporter quand Apple Sign-In configure
+// import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -58,12 +59,13 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     }
   }
 
-  Future<void> _handleAppleLogin() async {
-    final success = await ref.read(authProvider.notifier).signInWithApple();
-    if (success && mounted) {
-      context.go(AppRoutes.home);
-    }
-  }
+  // TODO: P1-006 - Reactiver quand Apple Sign-In configure
+  // Future<void> _handleAppleLogin() async {
+  //   final success = await ref.read(authProvider.notifier).signInWithApple();
+  //   if (success && mounted) {
+  //     context.go(AppRoutes.home);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -213,14 +215,15 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   onPressed: _handleGoogleLogin,
                   isLoading: isLoading,
                 ),
-                if (Platform.isIOS) ...[
-                  const SizedBox(height: AppSpacing.md),
-                  SocialLoginButton(
-                    type: SocialLoginType.apple,
-                    onPressed: _handleAppleLogin,
-                    isLoading: isLoading,
-                  ),
-                ],
+                // TODO: P1-006 - Reactiver quand Apple Developer configure
+                // if (Platform.isIOS) ...[
+                //   const SizedBox(height: AppSpacing.md),
+                //   SocialLoginButton(
+                //     type: SocialLoginType.apple,
+                //     onPressed: _handleAppleLogin,
+                //     isLoading: isLoading,
+                //   ),
+                // ],
                 const SizedBox(height: AppSpacing.xxl),
 
                 // Lien connexion

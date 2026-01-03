@@ -64,11 +64,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # Assets - uncomment when files are added
-  # assets:
-  #   - assets/images/
-  #   - assets/icons/
-  #   - assets/courses/
+  assets:
+    - assets/images/
+    - assets/images/google/
+    - assets/images/google/2.0x/
+    - assets/images/google/3.0x/
 
   # Fonts - using system default for now
   # To add Inter font later:
