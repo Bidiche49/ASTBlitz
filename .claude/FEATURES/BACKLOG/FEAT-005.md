@@ -1,0 +1,153 @@
+# FEAT-005: Authentification
+
+| Attribut | Valeur |
+|----------|--------|
+| **ID** | FEAT-005 |
+| **Titre** | Authentification (Email + Social) |
+| **Priorite** | P0 - Critique |
+| **Statut** | En cours |
+| **Phase** | 1 - Setup & Core |
+| **Dependances** | FEAT-001 (Firebase setup) |
+| **Bloque** | Toutes les features avec donnees utilisateur |
+
+---
+
+## Description
+
+Implementer l'authentification avec:
+- Email/Password (formulaire classique)
+- Google Sign-In
+- Apple Sign-In (iOS)
+- Redirect direct vers Home apres auth
+
+---
+
+## Specifications
+
+### Ecrans
+
+**LoginScreen (`/login`):**
+- Logo AST Blitz
+- Champs: Email, Mot de passe
+- Bouton "Se connecter"
+- Lien "Mot de passe oublie ?"
+- Separateur "ou"
+- Boutons sociaux: Google, Apple (iOS only)
+- Lien "Pas de compte ? S'inscrire"
+
+**RegisterScreen (`/register`):**
+- Logo AST Blitz
+- Champs: Nom, Email, Mot de passe, Confirmer mot de passe
+- Bouton "Creer mon compte"
+- Separateur "ou"
+- Boutons sociaux: Google, Apple (iOS only)
+- Lien "Deja un compte ? Se connecter"
+
+### Flow
+
+```
+App Start
+    │
+    ▼
+┌─────────────┐
+│ Check Auth  │
+└─────────────┘
+    │
+    ├── Non authentifie → LoginScreen
+    │                         │
+    │                         ├── Login OK → Home
+    │                         └── Register → RegisterScreen → Home
+    │
+    └── Authentifie → Home
+```
+
+### Validation
+
+| Champ | Regles |
+|-------|--------|
+| Email | Format email valide |
+| Password | Min 8 caracteres |
+| Confirm Password | Identique a Password |
+| Nom | Non vide |
+
+---
+
+## Plan d'implementation
+
+### Etape 1: AuthRepository
+- [ ] Creer `lib/data/repositories/auth_repository.dart`
+- [ ] Wrapper Firebase Auth (signIn, signUp, signOut, googleSignIn, appleSignIn)
+- [ ] Gestion erreurs Firebase → messages utilisateur
+
+### Etape 2: AuthProvider
+- [ ] Creer `lib/presentation/providers/auth_provider.dart`
+- [ ] State: loading, authenticated, unauthenticated, error
+- [ ] Actions: login, register, logout, socialLogin
+
+### Etape 3: Ecrans
+- [ ] Creer `lib/presentation/screens/auth/login_screen.dart`
+- [ ] Creer `lib/presentation/screens/auth/register_screen.dart`
+- [ ] Composants partages: SocialLoginButton, AuthTextField
+
+### Etape 4: Router
+- [ ] Ajouter routes login/register dans app_router.dart
+- [ ] Activer redirect auth (decomenter le code existant)
+
+### Etape 5: Tests
+- [ ] Tests unitaires AuthRepository (mock Firebase)
+- [ ] Tests AuthProvider
+- [ ] Tests widgets ecrans auth
+
+---
+
+## Criteres de completion
+
+- [ ] `flutter analyze` = 0 erreur
+- [ ] `flutter test` = tous passent
+- [ ] Login email/password fonctionne
+- [ ] Register email/password fonctionne
+- [ ] Google Sign-In fonctionne
+- [ ] Apple Sign-In fonctionne (iOS)
+- [ ] Redirect non-auth → login
+- [ ] Redirect auth → home
+- [ ] Logout fonctionne
+- [ ] Gestion erreurs (mauvais password, email existe, etc.)
+
+---
+
+## Notes techniques
+
+### Packages requis
+- `firebase_auth` (deja installe)
+- `google_sign_in`
+- `sign_in_with_apple`
+
+### Erreurs Firebase a gerer
+| Code Firebase | Message utilisateur |
+|---------------|---------------------|
+| user-not-found | Aucun compte avec cet email |
+| wrong-password | Mot de passe incorrect |
+| email-already-in-use | Cet email est deja utilise |
+| weak-password | Mot de passe trop faible |
+| invalid-email | Email invalide |
+
+---
+
+## Fichiers a creer
+
+```
+lib/
+├── data/
+│   └── repositories/
+│       └── auth_repository.dart
+└── presentation/
+    ├── providers/
+    │   └── auth_provider.dart
+    └── screens/
+        └── auth/
+            ├── login_screen.dart
+            ├── register_screen.dart
+            └── widgets/
+                ├── social_login_button.dart
+                └── auth_text_field.dart
+```

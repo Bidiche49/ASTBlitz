@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// TODO: Uncomment when auth redirect is enabled
-// import '../../providers/firebase_providers.dart';
+import '../../data/repositories/auth_repository.dart';
+import '../screens/auth/login_screen.dart';
+import '../screens/auth/register_screen.dart';
 import '../screens/home/home_screen.dart';
 
 // Routes constants
@@ -76,27 +77,38 @@ const hiddenNavPages = [
 
 // Router provider
 final routerProvider = Provider<GoRouter>((ref) {
-  // Auth redirect - temporarily disabled for development
-  // TODO: Enable auth redirect when login screens are implemented
-  // final isAuthenticated = ref.watch(isAuthenticatedProvider);
+  final isAuthenticated = ref.watch(isAuthenticatedProvider);
 
   return GoRouter(
     initialLocation: AppRoutes.home,
     debugLogDiagnostics: true,
     redirect: (context, state) {
-      // Auth redirect - temporarily disabled for development
-      // final isLoginRoute = state.matchedLocation == AppRoutes.login ||
-      //     state.matchedLocation == AppRoutes.register;
-      // if (!isAuthenticated && !isLoginRoute) {
-      //   return AppRoutes.login;
-      // }
-      // if (isAuthenticated && isLoginRoute) {
-      //   return AppRoutes.home;
-      // }
+      final isAuthRoute = state.matchedLocation == AppRoutes.login ||
+          state.matchedLocation == AppRoutes.register;
+
+      // Non authentifie → redirige vers login
+      if (!isAuthenticated && !isAuthRoute) {
+        return AppRoutes.login;
+      }
+
+      // Authentifie sur page auth → redirige vers home
+      if (isAuthenticated && isAuthRoute) {
+        return AppRoutes.home;
+      }
 
       return null;
     },
     routes: [
+      // Auth routes (sans bottom nav)
+      GoRoute(
+        path: AppRoutes.login,
+        builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.register,
+        builder: (context, state) => const RegisterScreen(),
+      ),
+
       // Main shell with bottom navigation
       ShellRoute(
         builder: (context, state, child) {
