@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1047517326176",
+    "firebase_url": "https://ast-blitz-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ast-blitz",
+    "storage_bucket": "ast-blitz.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047517326176:android:99de76737357dfc86ecc05",
+        "android_client_info": {
+          "package_name": "com.astblitz.ast_blitz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047517326176-gi7g8agqrmegosc71d78qgujq824jgoc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAuqP7Iq4SKNYxhENwy6TDSHjFyM9AFAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047517326176-gi7g8agqrmegosc71d78qgujq824jgoc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1047517326176-2de71lj1hpmvmcre6sbpobcj6uab6ht8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.astblitz.astBlitz"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
