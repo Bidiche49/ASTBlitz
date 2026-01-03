@@ -15,10 +15,10 @@ Implementer l'application AST Blitz Flutter basee sur les specs de `FLUTTER_SPEC
 
 | Metrique | Valeur |
 |----------|--------|
-| Features totales | 0 |
-| Terminees | 0 |
+| Features totales | 24 |
+| Terminees | 5 |
 | En cours | 0 |
-| Backlog | 0 |
+| Backlog | 19 |
 
 ---
 
@@ -57,17 +57,17 @@ FEATURES/
 
 | ID | Titre | Priorite | Statut | Commit | Details |
 |----|-------|----------|--------|--------|---------|
-| FEAT-001 | Setup projet Flutter | P0 | A faire | - | [Fiche](./BACKLOG/FEAT-001.md) |
-| FEAT-002 | Theme et Design System | P0 | A faire | - | [Fiche](./BACKLOG/FEAT-002.md) |
-| FEAT-003 | Navigation (go_router) | P0 | A faire | - | [Fiche](./BACKLOG/FEAT-003.md) |
+| FEAT-001 | Setup projet Flutter | P0 | Termine | f440273 | [Fiche](./COMPLETED/FEAT-001.md) |
+| FEAT-002 | Theme et Design System | P0 | Termine | f440273 | [Fiche](./COMPLETED/FEAT-002.md) |
+| FEAT-003 | Navigation (go_router) | P0 | Termine | f440273 | [Fiche](./COMPLETED/FEAT-003.md) |
 | FEAT-004 | Composants UI de base | P1 | A faire | - | [Fiche](./BACKLOG/FEAT-004.md) |
 
 ### Phase 2: Ecrans principaux
 
 | ID | Titre | Priorite | Statut | Commit | Details |
 |----|-------|----------|--------|--------|---------|
-| FEAT-010 | Ecran Home | P1 | A faire | - | [Fiche](./BACKLOG/FEAT-010.md) |
-| FEAT-011 | Bottom Navigation | P1 | A faire | - | [Fiche](./BACKLOG/FEAT-011.md) |
+| FEAT-010 | Ecran Home | P1 | Termine | f440273 | [Fiche](./COMPLETED/FEAT-010.md) |
+| FEAT-011 | Bottom Navigation | P1 | Termine | f440273 | [Fiche](./COMPLETED/FEAT-011.md) |
 | FEAT-012 | Ecran Exercises | P1 | A faire | - | [Fiche](./BACKLOG/FEAT-012.md) |
 | FEAT-013 | Ecran Learn | P1 | A faire | - | [Fiche](./BACKLOG/FEAT-013.md) |
 | FEAT-014 | Ecran Profile | P1 | A faire | - | [Fiche](./BACKLOG/FEAT-014.md) |
@@ -113,26 +113,26 @@ FEATURES/
 
 | Phase | Total | Termine | En cours | A faire |
 |-------|-------|---------|----------|---------|
-| Phase 1: Setup | 4 | 0 | 0 | 4 |
-| Phase 2: Ecrans | 5 | 0 | 0 | 5 |
+| Phase 1: Setup | 4 | 3 | 0 | 1 |
+| Phase 2: Ecrans | 5 | 2 | 0 | 3 |
 | Phase 3: Quiz | 5 | 0 | 0 | 5 |
 | Phase 4: Learn | 3 | 0 | 0 | 3 |
 | Phase 5: Social | 4 | 0 | 0 | 4 |
 | Phase 6: Misc | 3 | 0 | 0 | 3 |
-| **TOTAL** | **24** | **0** | **0** | **24** |
+| **TOTAL** | **24** | **5** | **0** | **19** |
 
 ---
 
 ## Progression
 
 ```
-Phase 1: [                                        ] 0%
-Phase 2: [                                        ] 0%
+Phase 1: [##############################          ] 75%
+Phase 2: [################                        ] 40%
 Phase 3: [                                        ] 0%
 Phase 4: [                                        ] 0%
 Phase 5: [                                        ] 0%
 Phase 6: [                                        ] 0%
-Global:  [                                        ] 0%
+Global:  [########                                ] 21%
 ```
 
 ---

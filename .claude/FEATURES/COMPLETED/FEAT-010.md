@@ -1,0 +1,40 @@
+# FEAT-010: Ecran Home
+
+| Attribut | Valeur |
+|----------|--------|
+| **ID** | FEAT-010 |
+| **Titre** | Ecran Home |
+| **Priorite** | P1 |
+| **Statut** | Termine |
+| **Phase** | 2 - Ecrans principaux |
+| **Commit** | f440273 |
+
+---
+
+## Description
+
+Implementation de l'ecran d'accueil avec score predictor, quiz du jour et grille de modules.
+
+---
+
+## Ce qui a ete fait
+
+- [x] Header avec titre et menu
+- [x] Score Predictor (placeholder)
+- [x] Quiz du Jour card
+- [x] Grille de modules (Blitz, Cours, Mon Professeur, Duel)
+
+---
+
+## Fichiers crees
+
+```
+lib/presentation/screens/home/
+└── home_screen.dart
+```
+
+---
+
+## Tests
+
+- [x] Smoke test: `test/widget/screens/home_screen_test.dart`

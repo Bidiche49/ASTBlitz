@@ -5,7 +5,7 @@
 | **ID** | FEAT-001 |
 | **Titre** | Setup projet Flutter |
 | **Priorite** | P0 - Critique |
-| **Statut** | A faire |
+| **Statut** | Termine |
 | **Phase** | 1 - Setup & Core |
 | **Effort estime** | 1-2 heures |
 | **Dependances** | Aucune |
@@ -126,11 +126,11 @@ flutter run      # App demarre
 
 ## Criteres de completion
 
-- [ ] `flutter analyze` = 0 erreur
-- [ ] `flutter run` = app demarre sans crash
-- [ ] Structure de dossiers creee
-- [ ] Dependencies installees
-- [ ] Commit valide
+- [x] `flutter analyze` = 0 erreur
+- [x] `flutter run` = app demarre sans crash
+- [x] Structure de dossiers creee
+- [x] Dependencies installees
+- [x] Commit valide (f440273)
 
 ---
 

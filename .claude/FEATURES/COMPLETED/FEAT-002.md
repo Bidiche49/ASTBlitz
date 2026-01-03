@@ -1,0 +1,44 @@
+# FEAT-002: Theme et Design System
+
+| Attribut | Valeur |
+|----------|--------|
+| **ID** | FEAT-002 |
+| **Titre** | Theme et Design System |
+| **Priorite** | P0 - Critique |
+| **Statut** | Termine |
+| **Phase** | 1 - Setup & Core |
+| **Commit** | f440273 |
+
+---
+
+## Description
+
+Implementation du design system complet base sur FLUTTER_SPECS.md.
+
+---
+
+## Ce qui a ete fait
+
+- [x] `app_colors.dart` - Couleurs, gradients
+- [x] `app_typography.dart` - Styles de texte
+- [x] `app_spacing.dart` - Spacing, radius, shadows
+- [x] `app_theme.dart` - ThemeData complet
+- [x] `app_icons.dart` - Icons lucide
+- [x] `app_animations.dart` - Durations, curves
+
+---
+
+## Fichiers crees
+
+```
+lib/core/
+├── theme/
+│   ├── app_colors.dart
+│   ├── app_typography.dart
+│   ├── app_spacing.dart
+│   └── app_theme.dart
+├── constants/
+│   └── app_icons.dart
+└── animations/
+    └── app_animations.dart
+```
