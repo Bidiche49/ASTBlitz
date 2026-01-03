@@ -106,9 +106,97 @@ test('should return', () {});   // "should" superflu
 
 ---
 
-## 5. Edge Cases Obligatoires
+## 5. Tests OBLIGATOIRES
 
-Pour chaque fonctionnalite:
+**Ces tests sont NON NEGOCIABLES pour chaque composant.**
+
+### 5.1 Ecrans (Screens)
+
+| Test | Description | Priorite |
+|------|-------------|----------|
+| **Smoke test** | L'ecran se charge sans crash | P0 |
+| **Elements UI** | Les elements principaux sont presents | P0 |
+| **Validation** | Erreurs affichees si formulaire invalide | P1 |
+
+```dart
+group('MyScreen', () {
+  // P0 - OBLIGATOIRE
+  testWidgets('renders without errors', (tester) async {
+    await tester.pumpWidget(buildTestWidget());
+    expect(find.byType(MyScreen), findsOneWidget);
+  });
+
+  // P0 - OBLIGATOIRE
+  testWidgets('displays main UI elements', (tester) async {
+    await tester.pumpWidget(buildTestWidget());
+    expect(find.text('Titre'), findsOneWidget);
+    expect(find.byType(ElevatedButton), findsWidgets);
+  });
+
+  // P1 - Recommande si formulaire
+  testWidgets('shows error when input is invalid', (tester) async {
+    // ...
+  });
+});
+```
+
+### 5.2 Widgets reutilisables
+
+| Test | Description | Priorite |
+|------|-------------|----------|
+| **Smoke test** | Le widget se charge | P0 |
+| **Props** | Les props sont respectees | P0 |
+| **Callbacks** | onTap/onPressed fonctionne | P1 |
+| **Etats** | loading, disabled, error | P1 |
+
+```dart
+group('MyWidget', () {
+  // P0 - OBLIGATOIRE
+  testWidgets('renders without errors', (tester) async {
+    await tester.pumpWidget(MyWidget());
+    expect(find.byType(MyWidget), findsOneWidget);
+  });
+
+  // P0 - OBLIGATOIRE
+  testWidgets('displays label from props', (tester) async {
+    await tester.pumpWidget(MyWidget(label: 'Test'));
+    expect(find.text('Test'), findsOneWidget);
+  });
+
+  // P1 - Recommande
+  testWidgets('calls onTap when tapped', (tester) async {
+    var tapped = false;
+    await tester.pumpWidget(MyWidget(onTap: () => tapped = true));
+    await tester.tap(find.byType(MyWidget));
+    expect(tapped, isTrue);
+  });
+});
+```
+
+### 5.3 Providers / Notifiers
+
+| Test | Description | Priorite |
+|------|-------------|----------|
+| **Etat initial** | L'etat initial est correct | P0 |
+| **Happy path** | L'action principale fonctionne | P0 |
+| **Erreurs** | Les erreurs sont gerees | P1 |
+
+### 5.4 Resume des tests obligatoires
+
+| Composant | Minimum tests | Tests obligatoires |
+|-----------|---------------|-------------------|
+| **Screen** | 2 | smoke + elements UI |
+| **Widget** | 2 | smoke + props |
+| **Provider** | 2 | etat initial + happy path |
+| **Model** | 1 | serialization (si applicable) |
+
+> **REGLE**: Un composant sans ses tests obligatoires ne peut PAS etre commit.
+
+---
+
+## 6. Edge Cases Recommandes
+
+Pour chaque fonctionnalite (au-dela des tests obligatoires):
 
 ```dart
 group('methodName', () {

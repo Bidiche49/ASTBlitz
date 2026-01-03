@@ -49,9 +49,20 @@ PLAN → CODE → COMPILE → TEST → DOC → COMMIT
 Une tache est terminee quand:
 - [ ] `flutter analyze` = 0 erreur, 0 warning
 - [ ] `flutter test` = tous passent
+- [ ] **Tests obligatoires ecrits** (voir TESTING/STANDARDS.md section 5)
 - [ ] Tests manuels documentes et effectues
 - [ ] Fiche FEAT-XXX mise a jour (statut DONE + commit hash)
 - [ ] Commit valide par l'utilisateur
+
+### Tests obligatoires (rappel)
+
+| Composant | Minimum |
+|-----------|---------|
+| Screen | smoke + elements UI |
+| Widget | smoke + props |
+| Provider | etat initial + happy path |
+
+> Voir `TESTING/STANDARDS.md` section 5 pour les details.
 
 ---
 
