@@ -27,7 +27,13 @@ class SocialLoginButton extends StatelessWidget {
       width: double.infinity,
       height: 52,
       child: OutlinedButton(
-        onPressed: isLoading ? null : onPressed,
+        onPressed: isLoading
+            ? null
+            : () {
+                // Ferme le clavier avant l'action pour eviter qu'il reste ouvert
+                FocusManager.instance.primaryFocus?.unfocus();
+                onPressed();
+              },
         style: OutlinedButton.styleFrom(
           backgroundColor: _backgroundColor,
           foregroundColor: _foregroundColor,

@@ -39,6 +39,9 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
   }
 
   Future<void> _handleRegister() async {
+    // Ferme le clavier avant l'action
+    FocusManager.instance.primaryFocus?.unfocus();
+
     if (!_formKey.currentState!.validate()) return;
 
     final success = await ref.read(authProvider.notifier).signUpWithEmail(

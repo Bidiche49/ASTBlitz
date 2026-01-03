@@ -34,6 +34,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   }
 
   Future<void> _handleLogin() async {
+    // Ferme le clavier avant l'action
+    FocusManager.instance.primaryFocus?.unfocus();
+
     if (!_formKey.currentState!.validate()) return;
 
     final success = await ref.read(authProvider.notifier).signInWithEmail(
